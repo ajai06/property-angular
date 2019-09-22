@@ -1,0 +1,207 @@
+<div class="modal-body">
+    <div class="col-6 mx-auto">
+        <h2 class="text-center text-danger mb-4">Post New PG</h2>
+        <form class="form" [formGroup]="addpgForm">
+               <div>
+                   <div class="card border-dark mb-2">
+                       <div class="card-body">
+                           <h5 class="mb-3">Personal Details</h5>
+                                <div class="form-group">
+                                    <label for="">Name</label>   
+                                    <input type="text" formControlName="name" class="form-control"
+                                     placeholder="Enter Your Name" 
+                                     [ngClass]="{'is-invalid': submitted && check.name.errors}">
+                                     <div class="alert alert-danger mt-1"
+                                      *ngIf="submitted && check.name.errors">
+                                        <small *ngIf="check.name.errors.required">Please Enter Your Name !</small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Mobile</label>   
+                                    <input type="number" class="form-control" formControlName="mobile"
+                                     placeholder="Enter Your Mobile Number"
+                                     [ngClass]="{'is-invalid': submitted && check.mobile.errors}">
+                                     <div class="alert alert-danger mt-1"
+                                      *ngIf="submitted && check.mobile.errors">
+                                        <small *ngIf="check.mobile.errors.required">Mobile Number Required !</small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>   
+                                    <input type="email" class="form-control" formControlName="email"
+                                     placeholder="Enter Your Email"
+                                     [ngClass]="{'is-invalid': submitted && check.email.errors}">
+                                     <div class="alert alert-danger mt-1"
+                                      *ngIf="submitted && check.email.errors">
+                                        <small *ngIf="check.email.errors.required">Email Required !</small>
+                                        <small *ngIf="check.email.errors.email">Enter Valid Email</small>
+                                    </div>
+                                </div>
+                       </div>
+                   </div>
+                   <div class="card border-dark mb-2">
+                        <div class="card-body">
+                            <h5 class="mb-3">Property Location</h5>
+                                <div class="form-group">
+                                    <label for="">City</label>   
+                                    <input type="text" class="form-control" formControlName="city"
+                                     placeholder="Enter City"
+                                     [ngClass]="{'is-invalid': submitted && check.city.errors}">
+                                     <div class="alert alert-danger mt-1"
+                                      *ngIf="submitted && check.city.errors">
+                                        <small *ngIf="check.city.errors.required">Enter Your City !</small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Locality</label>   
+                                    <input type="text" class="form-control" formControlName="location"
+                                     placeholder="Enter Locality "
+                                      [ngClass]="{'is-invalid': submitted && check.location.errors}">
+                                     <div class="alert alert-danger mt-1"
+                                      *ngIf="submitted && check.location.errors">
+                                        <small *ngIf="check.location.errors.required">Enter Your Nearest Location !</small>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <!-- features -->
+                    <div class="card border-dark mb-2">
+                        <div class="card-body">
+                            <h5 class="mb-3">Property Features</h5>
+                                <div class="row mb-3">
+                                    <span class="col-6">
+                                        <label>Available For</label>
+                                        <select class="form-control" formControlName="availableFor">
+                                            <option  value="" selected >Select</option>
+                                            <option  value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Both">Both</option>
+                                        </select>
+                                        <div class="alert alert-danger mt-1" 
+                                                 *ngIf="submitted && check.availableFor.errors">
+                                            <small *ngIf="check.availableFor.errors.required">Required</small>
+                                        </div>
+                                    </span>                                    
+                                    <span class="float-right col-6">
+                                        <label>Occupancy</label>
+                                        <select class="form-control" formControlName="occupancy">
+                                            <option value="" selected>Select</option>
+                                            <option value="single">Single</option>
+                                            <option value="sharing">Sharing</option>
+                                            <option value="both">Both</option>
+                                        </select>     
+                                        <div class="alert alert-danger mt-1" 
+                                                 *ngIf="submitted && check.occupancy.errors">
+                                            <small *ngIf="check.occupancy.errors.required">Required</small>
+                                        </div>                           
+                                    </span>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="mb-3">
+                                        <label class="mr-3">Attached Bathroom</label>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                 formControlName="bathroom" value="yes">Yes
+                                                 <input type="radio" class="form-check-input" 
+                                                 formControlName="bathroom" value="no"> No
+                                            </label>
+                                        </div>      
+                                        <div class="alert alert-danger mt-1" 
+                                                 *ngIf="submitted && check.bathroom.errors">
+                                            <small *ngIf="check.bathroom.errors.required">Select any One</small>
+                                        </div>                                  
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="mr-3">Attached Balcony</label>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                formControlName="balcony" value="yes"> Yes
+                                                <input type="radio" class="form-check-input"
+                                                formControlName="balcony" value="no"> No
+                                            </label>
+                                        </div>
+                                        <div class="alert alert-danger mt-1" 
+                                                 *ngIf="submitted && check.balcony.errors">
+                                            <small *ngIf="check.balcony.errors.required">Select any One</small>
+                                        </div> 
+                                    </div>
+                                    <div>
+                                        <label class="mr-3">Car Parking</label>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                formControlName="parking" value="yes"> Yes
+                                                <input type="radio" class="form-check-input"
+                                                formControlName="parking" value="no"> No
+                                            </label>
+                                        </div>
+                                        <div class="alert alert-danger mt-1" 
+                                                 *ngIf="submitted && check.parking.errors">
+                                                <small *ngIf="check.parking.errors.required">Select any One</small>
+                                            </div> 
+                                    </div>
+                                </div>
+                                <!-- funrish -->
+                                <div>
+                                    <h5>Furnishing Details</h5>
+                                    <div class="row ml-1 mt-3" formGroupName="furnishDetails">
+                                        <span class="form-check-inline col-3 mb-2">
+                                            <label class="form-check-label">
+                                              <input type="checkbox" class="form-check-input" 
+                                              formControlName="ac" value="ac">AC
+                                            </label>
+                                        </span>
+                                        <span class="form-check-inline col-3 mb-2">
+                                            <label class="form-check-label">
+                                              <input type="checkbox" class="form-check-input"
+                                              formControlName="wifi" value="wifi">Wifi
+                                            </label>
+                                        </span>
+                                        <span class="form-check-inline col-3 mb-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input"
+                                                formControlName="fridge" value="fridge">Fridge
+                                            </label>
+                                        </span>
+                                        <span class="form-check-inline col-3 ">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input"
+                                                formControlName="tv" value="tv">TV
+                                            </label>
+                                        </span>
+                                        <span class="form-check-inline col-6">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input"
+                                                    formControlName="washingMachine" value="washing">Washing Machine
+                                                </label>
+                                        </span>
+                                    </div>   
+                                </div>
+                        </div>
+                    </div>
+                    <!-- rent -->
+                    <div>
+                        <div class="card border-dark mb-2">
+                            <div class="card-body">
+                                <h5 class="mb-3">Rent Details</h5>
+                                    <div class="form-group">
+                                        <label for="">Monthly Rent</label>   
+                                        <input type="number" placeholder="Enter Total Rent" 
+                                        formControlName="rent" class="form-control">
+                                        <div class="alert alert-danger mt-1" 
+                                        *ngIf="submitted && check.rent.errors">
+                                            <small *ngIf="check.rent.errors.required">Please Enter Your Rent Amount</small>
+                                        </div>
+                                    </div>                                   
+                            </div>
+                        </div>    
+                    </div>
+                    <!-- images -->
+                    <div></div> 
+               </div>  
+            <button type="submit" (click)="onSubmit()" class="btn btn-success">Post Your PG</button>
+        </form>
+    </div>
+</div>

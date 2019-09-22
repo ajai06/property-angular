@@ -1,0 +1,39 @@
+<div>
+    <nav class="navbar navbar-light bg-dark justify-content-between">
+        <button class="btn btn-outline-info" routerLink="/myposts">My Posts</button>
+        <h3 class="text-light">All PG Lists</h3>
+        <button class="btn btn-outline-success" routerLink="/addpg">Add PG</button>
+      </nav>
+
+      <div class="container">
+            <div class="row mt-5">
+                <div class="col-10 mb-3" *ngFor="let pglist of pglists">
+                    <div class="card border-info">
+                        <div class="card-body">
+                            <h4 class="card-title">PG/Paying Guest in  <strong>{{pglist.city}}</strong>
+                            near {{pglist.location}} <span class="float-right">Rent: ${{pglist.rent}}</span></h4>
+                                    <div class="mt-2">
+                                        <ul class="nav">
+                                            <li class="nav-item mr-4">
+                                                <h6> Accomdation For</h6>
+                                                <p>{{pglist.availableFor}}</p>                                            
+                                            </li>
+                                            <li class="nav-item mr-4">
+                                                <h6> Occupancy</h6>
+                                                <p>{{pglist.occupancy}}</p>                                            
+                                            </li>
+                                            <li class="nav-item">
+                                                <h6> Parking</h6>
+                                                <p>{{pglist.parking}}</p>                                            
+                                            </li>                
+                                        </ul>
+                                    </div>
+                            <a routerLink="/pg/{{pglist._id}}" class="btn btn-primary mt-3">View Details</a>
+                            <a class="float-right mt-3">Owner: {{pglist.name}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div> 
+            
+</div>

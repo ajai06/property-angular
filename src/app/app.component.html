@@ -1,21 +1,89 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- header -->
+<header class="bg-dark">
+  <div class="header_topw3layouts_bar">
+    <div class="container">
+      <!-- header-top -->
+      <div class="row border-bottom py-lg-4 py-3">
+        <div class="col-xl-7 col-lg-6 header_agileits_left">
+          <ul>
+            <li class="mr-3">
+              <i class="fas fa-phone mr-2"></i> +(010) 221 918 811</li>
+            <li>
+              <i class="fas fa-envelope mr-2"></i>
+              <a href="mailto:info@example.com">info@example.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xl-5 col-lg-6 header_right text-center mt-lg-0 mt-2">
+          <div class="row">
+
+            <div class="col-4 header-loginw3ls text-lg-right text-center">
+              <a routerLink="/login" *ngIf="!authService.loggedIn()" class="log">
+                <i class="fas fa-user mr-2"></i> Login</a>
+            </div>
+            <div class="col-4 header-loginw3ls">
+              <a routerLink="/register" *ngIf="!authService.loggedIn()" class="log">
+                <i class="fas fa-key mr-2"></i> Register</a>
+            </div>
+          <div class="col-4 header-loginw3ls">
+              <a routerLink="" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()" class="log">
+                <i class="fas fa-sign-out-alt mr-2"></i> Logout</a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <!--// header-top -->
+
+      <!-- navigation -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" routerLink="">District
+          <span>Real Property</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/home">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item mx-xl-4 mx-lg-3 my-lg-0 my-3">
+              <a class="nav-link" routerLink="/about">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item scroll" href="#services">Services</a>
+                <a class="dropdown-item scroll" href="#pricings">Pricings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item scroll" href="#clients">Clients</a>
+                <a class="dropdown-item" routerLink="/about">Our Agents</a>
+              </div>
+            </li>
+            <li class="nav-item mx-xl-4 mx-lg-3 my-lg-0 my-3">
+              <a class="nav-link" routerLink="/portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/dashboard">Paying Guest <sup><span class="badge badge-danger">New</span></sup></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- //navigation -->
+    </div>
+  </div>
+</header>
+<!-- //header -->
 
 <router-outlet></router-outlet>

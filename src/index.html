@@ -1,14 +1,131 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Realestate</title>
-  <base href="/">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+	<meta charset="utf-8">
+	<title>District Real Estates</title>
+	<base href="/">
+	  <!-- Meta tag Keywords -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta charset="UTF-8" />
+	<meta name="keywords" content="District Responsive web template, Bootstrap Web Templates,
+	 Flat Web Templates, Android Compatible web template, Smartphone Compatible web template
+	  free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+	  <script>
+		  addEventListener("load", function () {
+			  setTimeout(hideURLbar, 0);
+		  }, false);
+  
+		  function hideURLbar() {
+			  window.scrollTo(0, 1);
+		  }
+	  </script>
+	  <!--// Meta tag Keywords -->
+  
+	  <!-- Custom-Files -->
+	  <link rel="stylesheet" href="./assets/css/bootstrap.css">
+	  <!-- Bootstrap-Core-CSS -->
+	  <link rel="stylesheet" href="./assets/css/style.css" type="text/css" media="all" />
+	  <!-- Style-CSS -->
+	  <link rel="stylesheet" href="./assets/css/fontawesome-all.css">
+	  <!-- Font-Awesome-Icons-CSS -->
+	  <!-- //Custom-Files -->
+  
+	  <!-- Web-Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+	 rel="stylesheet">
+	  <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		  rel="stylesheet">
+	  <!-- //Web-Fonts -->
 </head>
 <body>
   <app-root></app-root>
+
+    <!-- Js files -->
+<!-- JavaScript -->
+<script src="./assets/js/jquery-2.2.3.min.js"></script>
+<!-- Default-JavaScript-File -->
+<script src="./assets/js/bootstrap.js"></script>
+<!-- Necessary-JavaScript-File-For-Bootstrap -->
+
+<!-- team desoslide-JavaScript -->
+<script src="assets/js/jquery.desoslide.js"></script>
+<script>
+	$('#demo1_thumbs').desoSlide({
+		main: {
+			container: '#demo1_main_image',
+			cssClass: 'img-responsive'
+		},
+		effect: 'sideFade',
+		caption: true
+	});
+</script>
+<!-- //team desoslide-JavaScript -->
+
+<!-- flexSlider (for testimonials) -->
+<link rel="stylesheet" href="./assets/css/flexslider.css" type="text/css" media="screen" property="" />
+<script defer src="./assets/js/jquery.flexslider.js"></script>
+<script>
+  $(window).load(function () {
+    $('.flexslider').flexslider({
+      animation: "slide",
+      start: function (slider) {
+        $('body').removeClass('loading');
+      }
+    });
+  });
+</script>
+<!-- //flexSlider (for testimonials) -->
+
+<!-- stats -->
+<script src="./assets/js/jquery.waypoints.min.js"></script>
+<script src="./assets/js/jquery.countup.js"></script>
+<script>
+  $('.counter').countUp();
+</script>
+<!-- //stats -->
+
+<!-- password-script -->
+<!-- <script>
+  window.onload = function () {
+    document.getElementById("password1").onchange = validatePassword;
+    document.getElementById("password2").onchange = validatePassword;
+  }
+
+  function validatePassword() {
+    var pass2 = document.getElementById("password2").value;
+    var pass1 = document.getElementById("password1").value;
+    if (pass1 != pass2)
+      document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+    else
+      document.getElementById("password2").setCustomValidity('');
+    //empty string means no validation error
+  }
+</script> -->
+<!-- //password-script -->
+
+
+
+<!-- smooth scrolling -->
+<script src="./assets/js/SmoothScroll.min.js"></script>
+<!-- //smooth scrolling -->
+
+<!-- move-top -->
+<script src="./assets/js/move-top.js"></script>
+<!-- easing -->
+<script src="./assets/js/easing.js"></script>
+<!--  necessary snippets for few javascript files -->
+<script src="./assets/js/district.js"></script>
+
+<script src="./assets/js/bootstrap.js"></script>
+<!-- Necessary-JavaScript-File-For-Bootstrap -->
+<!-- //Js files -->
+
+<!-- jQuery-Photo-filter-lightbox-Gallery-plugin -->
+<script src="assets/js/jquery-1.7.2.js"></script>
+<script src="assets/js/jquery.quicksand.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/jquery.prettyPhoto.js"></script>
+<!-- //jQuery-Photo-filter-lightbox-Gallery-plugin -->
+
 </body>
 </html>

@@ -1,0 +1,88 @@
+<div class="col-12 mt-4">
+    <div class="card border-dark">
+        <div>
+            <nav class="navbar navbar-light bg-light justify-content-between">
+                <h3>${{pg.rent}} per Month</h3>
+                <h4>Paying Guest in {{pg.city}} Near {{pg.location}}</h4>
+                <div class="card p-3">
+                    <h3 class="card-text"><p class="card-text">Owner</p>{{pg.name}}</h3>
+                    <button class="btn btn-success mt-2">Contact Now</button>
+                </div>
+            </nav>
+            <div class="card col-8 mx-auto border-dark">
+                <div>
+                    <h4 class="mt-3 text-danger">Address</h4>
+                    <div class="col-5 mx-auto">
+                        <h5>City:<strong> {{pg.city}}</strong></h5>
+                        <h5 class="mt-3">Location: <strong>{{pg.location}}</strong></h5>
+                        <h5 class="mt-3">Address: <strong></strong></h5>
+                    </div>
+                    <h4 class="mt-3 text-danger">Property Details</h4>
+                    <div class="col-5 mx-auto">
+                        <div class="mt-3">
+                            <ul class="nav justify-content-between">
+                                <li class="nav-item mr-4">
+                                    <h6> Accomdation For</h6>
+                                    <p>{{pg.availableFor}}</p>                                            
+                                </li>
+                                <li class="nav-item mr-4">
+                                    <h6> Occupancy</h6>
+                                    <p>{{pg.occupancy}}</p>                                            
+                                </li>
+                                <li class="nav-item">
+                                    <h6> Parking</h6>
+                                    <p>{{pg.parking}}</p>                                            
+                                </li>
+                                <li class="nav-item mr-4 mt-3">
+                                    <h6>Balcony</h6>
+                                    <p>{{pg.balcony}}</p>                                            
+                                </li>
+                                <li class="nav-item mr-4 mt-3">
+                                    <h6> Attached Bathroom</h6>
+                                    <p>{{pg.bathroom}}</p>                                            
+                                </li>                                         
+                            </ul>
+                        </div>
+                    </div>
+                    <h4 class="text-danger">Furnishing Details</h4>
+                    <div class="col-5 mx-auto">
+                            <div class="mt-3">
+                                <ul class="nav justify-content-between">
+                                    <li class="nav-item mr-4">
+                                        <h6> AC</h6>
+                                        <p *ngIf=pg.furnishDetails.ac>Available</p>
+                                        <p *ngIf=!pg.furnishDetails.ac>Not Available</p>                                          
+                                    </li>            
+                                    <li class="nav-item mr-4">
+                                        <h6> Tv</h6>
+                                        <p *ngIf=!pg.furnishDetails.tv>Not Available</p>
+                                        <p *ngIf=pg.furnishDetails.tv>Available</p>                           
+                                    </li>
+                                    <li class="nav-item mr-4">
+                                        <h6> Wifi</h6>
+                                        <p *ngIf=!pg.furnishDetails.fridge>Not Available</p>
+                                        <p *ngIf=pg.furnishDetails.fridge>Available</p>                           
+                                    </li>
+                                    <li class="nav-item mr-4 mt-3">
+                                        <h6> Washing Machine</h6>
+                                        <p *ngIf=!pg.furnishDetails.washingMachine>Not Available</p>
+                                        <p *ngIf=pg.furnishDetails.washingMachine>Available</p>                           
+                                    </li>
+                                    <li class="nav-item mr-4 mt-3">
+                                        <h6> Fridge</h6>
+                                        <p *ngIf=!pg.furnishDetails.fridge>Not Available</p>
+                                        <p *ngIf=pg.furnishDetails.fridge>Available</p>                           
+                                    </li>                                                                    
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <!-- buttons -->
+            <div class="mt-3">  
+                <button class="btn btn-danger float-right mb-4 mr-4">Delete PG</button>             
+                <button class="btn btn-primary float-right mb-4 mr-4">Edit PG</button>                
+            </div>
+        </div>
+    </div>
+</div>
